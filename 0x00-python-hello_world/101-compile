@@ -1,22 +1,10 @@
-import imp
-import os
-import sys
+#!/bin/bash
+python3 -c "import py_compile; py_compile.compile('$PYFILE', '$PYFILE' + 'c')"
 
-py_file = os.environ['PYFILE']
-pyc_file = py_file + 'c'
-
-try:
-    with open(py_file, 'r') as f:
-        py_code = f.read()
-
-    pyc_module = imp.load_source(py_file[:-3], py_file)
-    imp.source_file(pyc_file, py_file)
-    pyc_module.__file__ = pyc_file
-
-    with open(pyc_file, 'wb') as f:
-        f.write(imp.getmagic())
-        pyc_module.file_write(f)
-
-except Exception as e:
-    sys.stderr.write(f"Error compiling Python script {py_file}: {e}\n")
-    sys.exit(1)
+"""
+The enclosed Python code import py_compile; py_compile.compile('$PYFILE', '$PYFILE' + 'c')
+ imports the py_compile module and calls the compile() function 
+to compile the Python script file specified in the PYFILE environment variable. 
+The output bytecode file is generated with the filename '$PYFILE'
+ + 'c', which effectively appends 'c' to the original filename.
+"""

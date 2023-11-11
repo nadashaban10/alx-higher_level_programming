@@ -1,10 +1,2 @@
 #!/bin/bash
 python3 -c "import py_compile; py_compile.compile('$PYFILE', '$PYFILE' + 'c')"
-
-"""
-The enclosed Python code import py_compile; py_compile.compile('$PYFILE', '$PYFILE' + 'c')
- imports the py_compile module and calls the compile() function 
-to compile the Python script file specified in the PYFILE environment variable. 
-The output bytecode file is generated with the filename '$PYFILE'
- + 'c', which effectively appends 'c' to the original filename.
-"""

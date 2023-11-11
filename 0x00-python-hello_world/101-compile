@@ -1,0 +1,22 @@
+import imp
+import os
+import sys
+
+py_file = os.environ['PYFILE']
+pyc_file = py_file + 'c'
+
+try:
+    with open(py_file, 'r') as f:
+        py_code = f.read()
+
+    pyc_module = imp.load_source(py_file[:-3], py_file)
+    imp.source_file(pyc_file, py_file)
+    pyc_module.__file__ = pyc_file
+
+    with open(pyc_file, 'wb') as f:
+        f.write(imp.getmagic())
+        pyc_module.file_write(f)
+
+except Exception as e:
+    sys.stderr.write(f"Error compiling Python script {py_file}: {e}\n")
+    sys.exit(1)

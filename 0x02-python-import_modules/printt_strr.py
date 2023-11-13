@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def print_string():
+def print_string( ):
     print("#pythoniscool")

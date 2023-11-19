@@ -10,14 +10,14 @@ def roman_to_int(roman_string):
     while i < len(roman_string):
         if i + 1 < len(roman_string) and roman_string[i:i + 2] in roman_dict:
             if roman_dict[roman_string[i:i + 2]] > roman_dict[roman_string[i]]:
-                return 0  '# Invalid Roman numeral'
+                return 0
             int_value += roman_dict[roman_string[i:i + 2]]
-            i += 2 '# special cases lw 3ndnda 2wra b3d'
+            i += 2 
         else:
             int_value += roman_dict[roman_string[i]]
             i += 1
 
-   '# Check for numbers outside the valid range (1 to 3999)'
+
     if int_value < 1 or int_value > 3999:
         return 0
 

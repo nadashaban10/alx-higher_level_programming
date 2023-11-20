@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-import sys
-
-
 def magic_calculation(a, b):
-    result = 0
-    for i in range(1, 3):
-        try:
+    try:
+        result = 0
+        for i in range(1, 3):
+            if i > a:
+                raise Exception('Too far')
             result += (a ** b) // i
-        except Exception:
-                print("Exception:", Exception, file=sys.stderr)
-    return None
+    except Exception as e:
+        print("Exception:", e, file=sys.stderr)
+        return None
+    else:
+        return result + b

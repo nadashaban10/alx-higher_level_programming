@@ -7,7 +7,7 @@ class Square:
         """ Initialize the Sqaure with size
 
         Args:
-            size(int): priv attr size 
+            size (int): The size of 
         """
 
         self.__size = size

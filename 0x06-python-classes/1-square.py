@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-""" define a class with a priv atrr """
+""" Define a class with a priv atrr """
 class Square:
-    """ represent the square """
+    """ Represent the square """
 
     def __init__(self, size):
-        """ initialize the Sqaure with size
+        """ Initialize the Sqaure with size
+
             Args:
-            size(int): priv attr size 
+                size(int): priv attr size 
         """
 
         self.__size = size

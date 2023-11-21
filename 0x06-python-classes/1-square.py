@@ -6,8 +6,8 @@ class Square:
     def __init__(self, size):
         """ Initialize the Sqaure with size
 
-            Args:
-                size(int): priv attr size 
+        Args:
+            size(int): priv attr size 
         """
 
         self.__size = size

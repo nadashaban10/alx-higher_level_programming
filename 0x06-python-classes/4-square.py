@@ -25,4 +25,4 @@ class Square:
 
     def area(self):
         """Calculate and return the current area of the square."""
-        return self.size * self.size
+        return self.__size * self.__size

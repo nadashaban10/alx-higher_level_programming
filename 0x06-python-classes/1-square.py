@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Define a class with a priv atrr """
 
+
 class Square:
     """ Represent the square """
 

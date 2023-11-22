@@ -1,42 +1,51 @@
 #!/usr/bin/python3
-
-"""Define a class Square."""
+"""    This script defines a basic Square class."""
 
 
 class Square:
-    """Represent a square."""
+    """
+    Define a class named Square
+    Attributes:
+    __size : private
+    """
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize a new square.
-
-        Args:
-            size (int): The size of the new square.
+        """Intializing the square object with a private size attribute
+        Args :
+        __size : size of squre
         """
-        self.size = size
         self.position = position
+        self.size = size
+        if not isinstance(self.__size, int):
+            raise TypeError("size must be an integer")
+        elif self.__size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
+
+    def area(self):
+        """A public instance method to calculate area of square
+        Returns : square area"""
+        return self.__size ** 2
 
     @property
     def size(self):
-         """a method to get size
-        Args:
-            self
-        Returns: size square"""
-        return (self.__size)
+        """Returns : size of square"""
+        return self.__size
 
     @size.setter
     def size(self, value):
+        """propery setter for size
+        Args : value
+        Raises: Type
+        error or value error"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        else:
+            self.__size = value
 
-    def area(self):
-         """a method to get a area square
-        Args:
-            self
-        Returns: area square"""
-        return (self.__size * self.__size)
     @property
     def position(self):
         """a method to access postition

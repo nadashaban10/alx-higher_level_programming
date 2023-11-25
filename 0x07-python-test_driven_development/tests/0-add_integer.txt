@@ -1,0 +1,73 @@
+
+==============================
+how to use the 0-add_integer.py
+==============================
+
+this module is define a addition function with 2 int args (a, b)
+
+Usage
+======
+
+```add_integer(...)``` returns addition of two args using " + " operator
+
+::
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(4, 3)
+7
+
+::
+
+>>> add_integer(10, -2)
+8
+
+also work with floating values with casting first
+
+::
+
+>>> add_integer(2.0, 2.0)
+4
+
+::
+
+>>> add_integer(-2.0, 6.0)
+4
+
+>>> add_integer(-2, -1)
+-3
+
+>>> add_integer(1)
+99
+
+===========
+None casses
+===========
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+::
+
+>>> add_integer(333, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+::
+
+>>> add_integer("hey", "there!")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+::
+
+>>> add_integer("its", 6)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+::
+
+>>> add_integer(1, "hello")
+Traceback (most recent call last):
+TypeError: b must be an integer
+

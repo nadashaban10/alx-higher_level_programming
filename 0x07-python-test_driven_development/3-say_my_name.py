@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-
 """this is module that prints my name , with 2 str given"""
+
+
 def say_my_name(first_name, last_name=""):
     """ funtion prints with 2 parameter
 
@@ -8,6 +9,8 @@ def say_my_name(first_name, last_name=""):
     Args:
         first_name: fisrt name to print.
         last_name: last name to print.
+        Raises:
+        TypeError: If either of first_name or last_name are not strings.
 
     Return:
         void , full name

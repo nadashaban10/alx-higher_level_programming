@@ -1,40 +1,42 @@
 #!/usr/bin/python3
-
 """
-Define a Regtangle class with W and H
+Define a Regtangle class with H and W
 """
 
 
 class Rectangle:
-    """Rrpresentation of Rectanagle class"""
+    """Representation of Rectangle class"""
 
-
-def __init__(self, width=0, height=0):
-    """initialzes the width rectangle"""
-    self.width = width
+    def __init__(self, width=0, height=0):
+        """Initializes the width rectangle"""
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """getter for priv instance"""
+        """Getter for priv instance"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Setter for the private instance attribute width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
         elif value < 0:
             raise ValueError("width must be >= 0")
-        self__.width = value
+        self.__width = value
 
-        @property
-        def height(self):
-            """getter fot height priv inst"""
-            return self.__height
+    @property
+    def height(self):
+        """getter fot height priv inst"""
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            if not isinstance(value, int):
-                raise TypeError("height must be an integer")
-            elif value < 0:
-                raise ValueError(" height must be >= 0")
+    @height.setter
+    def height(self, value):
+        """Setter for the private instance attribute height"""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError(" height must be >= 0")
+        self.__height = value

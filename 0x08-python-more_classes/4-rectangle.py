@@ -54,13 +54,16 @@ class Rectangle:
         return p
 
     def __str__(self):
+        """return printed square based or h and w"""
         if self.width == 0 or self.height == 0:
             return ""
-
-        rectangle_str = ""
+        rectangle_printed = ""
         for i in range(self.height):
             for j in range(self.width):
-                rectangle_str += "#"
-            rectangle_str += "\n"
+                rectangle_printed = rectangle_printed + "#"
+            rectangle_printed = rectangle_printed + "\n"
+        return rectangle_printed
 
-        return rectangle_str
+    def __repr__(self):
+        """returns a string representation of the rectangle for reproduction"""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)

@@ -3,7 +3,7 @@
 Module for class that inherits from REctangle
 """
 
-"""Parent class"""
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 

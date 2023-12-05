@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-'''class with public instance'''
+"""
+Contains the class BaseGeometry
+"""
 
 
-def area(self):
-    '''function that raise exception'''
-    raise Exception("area() is not implemented")
+class BaseGeometry:
+    """A class with public attribute area"""
+    def area(self):
+        '''function that raise exception'''
+        raise Exception("area() is not implemented")
+    

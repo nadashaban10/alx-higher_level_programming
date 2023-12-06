@@ -12,6 +12,6 @@ try:
     new = load_file(file)
 except (FileNotFoundError, ValueError):
     new = []
-    for args in sys.argv[1:]:
+for args in sys.argv[1:]:
         new.append(args)
-        save_file(new, file)
+save_file(new, file)

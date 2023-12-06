@@ -13,5 +13,5 @@ try:
 except (FileNotFoundError, ValueError):
     new = []
 for args in sys.argv[1:]:
-        new.append(args)
+    new.append(args)
 save_file(new, file)

@@ -1,4 +1,3 @@
-guillaume@ubuntu:~/0x0B$ cat 12-main.py
 #!/usr/bin/python3
 """
 12-main

@@ -3,7 +3,7 @@
 
 
 def pascal_triangle(n):
-    
+
     '''
     Generates a list of lists representing the Pascal's triangle of n.
 
@@ -13,7 +13,7 @@ def pascal_triangle(n):
     Returns:
         list(list(int)): A list of lists representing the Pascal's triangle
     '''
-    
+
     if n <= 0:
         return []
     triangle = [[1]]

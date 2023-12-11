@@ -81,18 +81,17 @@ class Square(Rectangle):
                     if key == "y":
                         self.y = value
 
-
-def to_dictionary(self):
-    """
+    def to_dictionary(self):
+        """
     Return the dictionary representation of a Rectangle.
 
     Returns:
         dict: A dictionary containing the attributes of the Rectangle.
-    """
-    return {
-        "id": self.id,
-        "width": self.width,
-        "height": self.height,
-        "x": self.x,
-        "y": self.y,
-    }
+        """
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y,
+        }

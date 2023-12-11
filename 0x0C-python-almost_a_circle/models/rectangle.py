@@ -138,8 +138,19 @@ class Rectangle(Base):
                 if key == "y":
                     self.y = value
 
+    def __str__(self):
+        """Return the print() and str() representation of the Rectangle."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)
+
     def to_dictionary(self):
-        """Return the dictionary representation of a Rectangle."""
+        """
+    Return the dictionary representation of a Rectangle.
+
+    Returns:
+        dict: A dictionary containing the attributes of the Rectangle.
+        """
         return {
             "id": self.id,
             "width": self.width,
@@ -147,9 +158,3 @@ class Rectangle(Base):
             "x": self.x,
             "y": self.y
         }
-
-    def __str__(self):
-        """Return the print() and str() representation of the Rectangle."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                       self.x, self.y,
-                                                       self.width, self.height)

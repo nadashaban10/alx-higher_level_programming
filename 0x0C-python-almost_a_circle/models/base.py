@@ -1,14 +1,22 @@
 #!/usr/bin/python3
+
 '''define a base module'''
 
 
 class Base:
+    '''
+    This Represents the "base" for all other classes in project 0x0C*.
+
+    Private Class Attributes:
+        __nb_object (int): Number of instantiated Bases.
+    '''
+
     __nb_objects = 0
 
     def __init__(self, id=None):
-
         '''
-      function with id parameter
+      initialize a new base
+
       Args: id (int value)
         '''
         if id is not None:

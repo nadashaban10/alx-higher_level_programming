@@ -57,7 +57,7 @@ class Square(Rectangle):
         """
         if args is not None and len(args) != 0:
             if len(args) >= 1:
-                if not isinstance(value, int) and args[0] is not None:
+                if not isinstance(args[0], int) and args[0] is not None:
                     raise TypeError("id must be an integer")
                 self.id = args[0]
             if len(args) > 1:
@@ -71,15 +71,13 @@ class Square(Rectangle):
                 if key == "id":
                     if not isinstance(value, int) and value is not None:
                         raise TypeError("id must be an integer")
-                        self.id = value
-                    if key == "width":
-                        self.width = value
-                    if key == "height":
-                        self.height = value
-                    if key == "x":
-                        self.x = value
-                    if key == "y":
-                        self.y = value
+                    self.id = value
+                if key == "size":
+                    self.width = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def to_dictionary(self):
         """

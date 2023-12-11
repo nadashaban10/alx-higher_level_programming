@@ -24,7 +24,7 @@ class Square(Rectangle):
             Returns:
             A string of the format "[Square] (<id>) <x>/<y> - <size>".
         '''
-        return f"[square] ({self.id}) ({self.x})/({self.y}) - {self.width}"
+        return f"[square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
@@ -90,8 +90,7 @@ class Square(Rectangle):
         """
         return {
             "id": self.id,
-            "width": self.width,
-            "height": self.height,
             "x": self.x,
+            "size": self.width,
             "y": self.y,
         }

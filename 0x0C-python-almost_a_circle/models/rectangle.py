@@ -6,11 +6,19 @@ from models.base import Base
 
 class Rectangle(Base):
     '''
-        instance Methodes of rectangle
-        Display()
-        Area()
-        Update()
-        __str__()
+       Initialize a new Rectangle.
+
+        Args:
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+            x (int): The x coordinate of the new Rectangle.
+            y (int): The y coordinate of the new Rectangle.
+            id (int): The identity of the new Rectangle.
+        Raises:
+            TypeError: If either of width or height is not an int.
+            ValueError: If either of width or height <= 0.
+            TypeError: If either of x or y is not an int.
+            ValueError: If either of x or y < 0
 
     '''
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -19,15 +27,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-
-        '''
-        initialize the attribute instance
-
-        Args:
-
-
-
-        '''
     @property
     def width(self):
         """Set/get the width of the Rectangle."""
@@ -43,7 +42,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Set/get the height of the Rectangle."""
+        """set/get the height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -99,16 +98,16 @@ class Rectangle(Base):
             print()
 
     def update(self, *args, **kwargs):
-        '''Update with args and kwargs
-
+        '''Update the Rectangle.
 
         Args:
-            (id) 1st-attribute.
-            (width) 2nd-attribute.
-            (height) 3nd-attribute.
-            (x) 4nd-attribute.
-            (y) 5nd-attribute.
-
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
         '''
         if args is not None and len(args) != 0:
             if len(args) >= 1:

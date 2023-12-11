@@ -111,7 +111,7 @@ class Rectangle(Base):
         '''
         if args is not None and len(args) != 0:
             if len(args) >= 1:
-                if type(args[0]) != int and args[0] is not None:
+                if not isinstance(args[0]) and args[0] is not None:
                     raise TypeError("id must be an integer")
                 self.id = args[0]
             if len(args) > 1:
@@ -124,9 +124,9 @@ class Rectangle(Base):
                 self.y = args[4]
         else:
             for key, value in kwargs.items():
-                    if key == "id":
-                        if type(value) != int and value is not None:
-                            raise TypeError("id must be an integer")
+                if key == "id":
+                    if not isinstance(value, int) and value is not None:
+                        raise TypeError("id must be an integer")
                         self.id = value
                     if key == "width":
                         self.width = value
@@ -137,6 +137,6 @@ class Rectangle(Base):
                     if key == "y":
                         self.y = value
 
-
     def __str__(self):
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+        return (f"[Rectangle] ({self.id})\
+            {self.x}/{self.y} - {self.width}/{self.height}")

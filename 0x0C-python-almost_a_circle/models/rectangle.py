@@ -138,6 +138,18 @@ class Rectangle(Base):
                 if key == "y":
                     self.y = value
 
+    def to_dictionary(self):
+        """Return the dictionary representation of a Rectangle."""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+
     def __str__(self):
-        return (f"[Rectangle] ({self.id})\
-            {self.x}/{self.y} - {self.width}/{self.height}")
+        """Return the print() and str() representation of the Rectangle."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)

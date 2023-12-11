@@ -112,7 +112,7 @@ class Rectangle(Base):
         '''
         if args is not None and len(args) != 0:
             if len(args) >= 1:
-                if not isinstance(args[0]) and args[0] is not None:
+                if not isinstance(args[0], (int, None)):
                     raise TypeError("id must be an integer")
                 self.id = args[0]
             if len(args) > 1:

@@ -31,28 +31,28 @@ class Square(Rectangle):
         """
         Retrieves the size attribute
         """
-        return self.__Width
+        return self.Width
 
     @size.setter
     def size(self, value):
-        if type(value) is not int:
+        '''if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("width must be > 0")
-            self.__width = value
-            self.__height = value
+            raise ValueError("width must be > 0")'''
+        self.__width = value
+        self.__height = value
 
     def update(self, *args, **kwargs):
-        '''Update with args and kwargs
-
+        """Update the Square.
 
         Args:
-            (id) 1st-attribute.
-            (size) 2nd-attribute.
-            (x) 3nd-attribute.
-            (y) 4nd-attribute.
-
-        '''
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents size attribute
+                - 3rd argument represents x attribute
+                - 4th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
         if args is not None and len(args) != 0:
             if len(args) >= 1:
                 if not isinstance(value, int) and args[0] is not None:
@@ -80,3 +80,19 @@ class Square(Rectangle):
                         self.x = value
                     if key == "y":
                         self.y = value
+
+
+def to_dictionary(self):
+    """
+    Return the dictionary representation of a Rectangle.
+
+    Returns:
+        dict: A dictionary containing the attributes of the Rectangle.
+    """
+    return {
+        "id": self.id,
+        "width": self.width,
+        "height": self.height,
+        "x": self.x,
+        "y": self.y,
+    }

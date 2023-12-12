@@ -19,6 +19,7 @@ class Square(Rectangle):
         '''
 
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     def __str__(self):
         '''
@@ -26,14 +27,14 @@ class Square(Rectangle):
             Returns:
             A string of the format "[Square] (<id>) <x>/<y> - <size>".
         '''
-        return f"[square] ({self.id}) {self.x}/{self.y} - {self.width}"
+        return f"[square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     @property
     def size(self):
         """
         Retrieves the size attribute
         """
-        return self.Width
+        return self.__width
 
     @size.setter
     def size(self, value):
@@ -88,7 +89,7 @@ class Square(Rectangle):
         """
         return {
             "id": self.id,
+            "size": self.size,
             "x": self.x,
-            "size": self.width,
             "y": self.y,
         }

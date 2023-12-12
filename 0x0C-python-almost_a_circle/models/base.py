@@ -65,3 +65,22 @@ class Base:
             return "[]"
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Creates an instance of all attributes set from a dictionary.
+
+        Args:
+            dictionary (dict): A dictionary containing attr
+
+        Returns:
+            Base: An instance of the class with all attributes set.
+        """
+        dummy = cls(1, 1, 1)
+        '''to update args and kwargs provided in dummy'''
+        dummy.update(**dictionary)
+        return dummy
+    @classmethod
+    def load_from_file(cls):
+        

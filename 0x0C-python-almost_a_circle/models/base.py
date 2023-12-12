@@ -77,7 +77,10 @@ class Base:
         Returns:
             Base: An instance of the class with all attributes set.
         """
-        dummy = cls(1, 1, 1)
-        '''to update args and kwargs provided in dummy'''
-        dummy.update(**dictionary)
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                dummy = cls(1, 1, 1)
+        else:
+            '''to update args and kwargs provided in dummy'''
+            dummy.update(**dictionary)
         return dummy

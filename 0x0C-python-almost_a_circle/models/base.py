@@ -81,6 +81,3 @@ class Base:
         '''to update args and kwargs provided in dummy'''
         dummy.update(**dictionary)
         return dummy
-    @classmethod
-    def load_from_file(cls):
-        

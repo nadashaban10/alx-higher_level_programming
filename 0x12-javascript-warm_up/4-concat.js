@@ -1,12 +1,2 @@
-#!/usr/bin/node
-
-function printfis () {
-  const args = process.argv.slice(2);
-  if (args.length === 0) {
-    console.log('undefined is undefined');
-  } else {
-    console.log(args.join(' is '));
-  }
-}
-
-printfis();
+#!/usr/bin/nod
+console.log(process.argv[2] + ' is ' + process.argv[3]);

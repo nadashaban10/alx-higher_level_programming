@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-"""script that fetches url given"""
-import requests
+"""A script that takes in a URL"""
 import sys
+import requests
+
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    try:
-        # Send a request to the URL
-        response = requests.get(url)
 
-        # (4xx or 5xx status codes)
-        response.raise_for_status()
-        print(response.text)
-    except requests.exceptions.HTTPError as exc:
-        print("Error code:", exc.response.status_code)
+    req = requests.get(url)
+    if req.status_code >= 400:
+        print("Error code: {}".format(req.status_code))
+    else:
+        print(req.text)

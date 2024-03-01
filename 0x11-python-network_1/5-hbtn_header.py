@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""script that fetches url given"""
+"""Displays the X-Request-Id header variable of a request to a given URL
+"""
+import sys
+import requests
+
+
 if __name__ == "__main__":
-    import requests
-    import sys
     url = sys.argv[1]
-    response = requests.get(url)
-    print(response.headers["X-Request-Id"])
+
+    res = requests.get(url)
+    print(res.headers.get("X-Request-Id"))

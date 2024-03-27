@@ -3,8 +3,8 @@ const request = require('request');
 
 request(process.argv[2], (error, response, body) => {
   if (error) {
-    console.error('error:', error); // Print the error if one occurred
+    console.error('error:', error);
   } else {
-    console.log('code:', response.statusCode); // Print the response status code if a response was received
+    console.log('code:', response.statusCode);
   }
 });
